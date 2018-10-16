@@ -7,29 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TP1.Account
-{
-
-
-    public partial class Login
-    {
-
+namespace TP1 {
+    
+    
+    public partial class WebForm5 {
+        
         /// <summary>
-        /// RegisterHyperLink control.
+        /// GridView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink RegisterHyperLink;
-
-        /// <summary>
-        /// OpenAuthLogin control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::TP1.Account.OpenAuthProviders OpenAuthLogin;
+        protected global::System.Web.UI.WebControls.GridView GridView1;
     }
 }
