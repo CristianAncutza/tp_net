@@ -13,13 +13,13 @@ namespace TP1 {
     public partial class WebForm1 {
         
         /// <summary>
-        /// TextBoxNombre control.
+        /// TextBoxUsuario control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxNombre;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxUsuario;
         
         /// <summary>
         /// TextBoxPassword control.
@@ -29,6 +29,15 @@ namespace TP1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBoxPassword;
+        
+        /// <summary>
+        /// Label1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
         /// Button1 control.

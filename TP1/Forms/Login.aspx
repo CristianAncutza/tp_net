@@ -5,12 +5,15 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
     Usuario<br />
-    <asp:TextBox ID="TextBoxNombre" runat="server" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
+    <asp:TextBox ID="TextBoxUsuario" runat="server" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
     <br />
     <br />
     Contraseña<br />
     <asp:TextBox ID="TextBoxPassword" runat="server"></asp:TextBox>
     <br />
     <br />
-    <asp:Button ID="Button1" runat="server" Text="Button" />
+    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+    <br />
+    <br />
+    <asp:Button ID="Button1" runat="server" Text="Enviar" OnClick="Button1_Click" />
 </asp:Content>
