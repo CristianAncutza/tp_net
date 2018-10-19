@@ -10,7 +10,7 @@
 namespace TP1 {
     
     
-    public partial class WebForm4 {
+    public partial class WebForm6 {
         
         /// <summary>
         /// TextBox1 control.
