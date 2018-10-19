@@ -23,7 +23,7 @@ namespace TP1
                 SqlConnection sqlcon;
                 SqlCommand sqlcom;
 
-                sqlcon = new SqlConnection(@"Data Source=FACUNDO\SQLEXPRESS;Initial Catalog=tp1;Integrated Security=True;Pooling=False");
+                sqlcon = new SqlConnection(@"Data Source=localhost ;Initial Catalog=tp1;Integrated Security=True;Pooling=False");
                 sqlcon.Open();
 
                 sqlcom = new SqlCommand("SELECT * FROM usuario WHERE usuario = '" + TextBoxUsuario.Text + "' AND password = '" + TextBoxPassword.Text + "'", sqlcon);
