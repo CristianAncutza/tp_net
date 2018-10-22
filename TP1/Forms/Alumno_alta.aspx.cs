@@ -13,5 +13,10 @@ namespace TP1
         {
 
         }
+
+        protected void BtnCancelar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Alumno_lista.aspx");
+        }
     }
 }

@@ -5,21 +5,30 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
 
-    <title>Login de Usuario</title><br /><br />
+    <div> <h3>Login de Usuario</h3></div><br /><br />
+
+    <div class="container">
+        <div class="form-group">
+            <div class="col-sm-7">
+                <asp:Label ID="LblUsuario" runat="server" Text="Usuario: "></asp:Label>
+                <asp:TextBox ID="TxtUsuario" runat="server" Class="form-control" ></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ForeColor="red"  ControlToValidate="TxtUsuario" runat="server" ErrorMessage="* Ingrese el Usuario"></asp:RequiredFieldValidator>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-7">
+                <asp:Label ID="LblPassword" runat="server" Text="Contraseña: "></asp:Label>             
+                <asp:TextBox ID="TxtPassword" runat="server" type="password" Class="form-control"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ForeColor="red"  ControlToValidate="TxtPassword" runat="server" ErrorMessage="* Ingrese la contraseña"></asp:RequiredFieldValidator>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <asp:Label ID="LblError" ForeColor="red" runat="server" Text=""></asp:Label>
+        </div>
+        <asp:Button ID="BtnEnviar" runat="server" Text="Enviar" OnClick="Button1_Click" />
+    </div>
 
     
-    <asp:Label ID="LblUsuario" runat="server" Text="Usuario: "></asp:Label><br />
-    <asp:TextBox ID="TxtUsuario" runat="server" ></asp:TextBox>
-    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate="TxtUsuario" runat="server" ErrorMessage="Ingrese el Usuario"></asp:RequiredFieldValidator>
-    <br />
-    <br />
-    <asp:Label ID="LblPassword" runat="server" Text="Contraseña: "></asp:Label><br />    
-    <asp:TextBox ID="TxtPassword" runat="server" type="password"></asp:TextBox>
-    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ControlToValidate="TxtPassword" runat="server" ErrorMessage="Ingrese la contraseña"></asp:RequiredFieldValidator>
-    <br />
-    <br />
-    <asp:Label ID="LblError" runat="server" Text=""></asp:Label>
-    <br />
-    <br />
-    <asp:Button ID="BtnEnviar" runat="server" Text="Enviar" OnClick="Button1_Click" />
 </asp:Content>

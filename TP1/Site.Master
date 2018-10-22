@@ -4,11 +4,16 @@
 <html lang="en">
 <head runat="server">
     <meta charset="utf-8" />
-    <title><%: Page.Title %> - TP 1 Programación Avanzada 2                </title>
+    <title>TP 1 Programación Avanzada 2 </title>
     <asp:PlaceHolder runat="server">     
           <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>  
     <webopt:BundleReference runat="server" Path="~/Content/css" /> 
+    
+    <link rel="stylesheet" href="Styles/css/bootstrap.min.css" />
+    <script src="Scripts/jquery-1.7.1.min.js"></script>    
+    <script src="Scripts/js/bootstrap.min.js"></script>
+    
 
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <meta name="viewport" content="width=device-width" />
@@ -30,7 +35,7 @@
             <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
             <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
             <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
-            <asp:ScriptReference Name="WebFormsBundle" />
+            <asp:ScriptReference Name="WebFormsBundle" />                        
             <%--Site Scripts--%>
 
         </Scripts>
@@ -39,12 +44,15 @@
         <div class="content-wrapper">
             <div class="float-left">
                 <p class="site-title">
-                <!-- aca va el titulo -->  
+                    Alumno
                 </p>
             </div>
             <div class="float-right">
                 <section id="login">
+                    
+   
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
+   
                         <AnonymousTemplate>
                             <ul>
                                 <li><a id="registerLink" runat="server" href="~/Forms/Registracion.aspx">Registrarse</a></li>
@@ -54,15 +62,14 @@
                         <LoggedInTemplate>
                             <p>
                                 Hola <asp:LoginName runat="server" CssClass="username" /></a>!
-                                <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" />
+                                <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/Forms/Login.aspx" />
                             </p>
                         </LoggedInTemplate>
                     </asp:LoginView>
+
                 </section>
                 <nav>
-                    <ul id="menu">                        
-                        <li><a runat="server" href="~/About.aspx">#</a></li>                        
-                    </ul>
+
                 </nav>
             </div>
         </div>

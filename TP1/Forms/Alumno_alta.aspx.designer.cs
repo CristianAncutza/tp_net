@@ -202,31 +202,31 @@ namespace TP1 {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator7;
         
         /// <summary>
-        /// LblCiudad control.
+        /// LblPais control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblCiudad;
+        protected global::System.Web.UI.WebControls.Label LblPais;
         
         /// <summary>
-        /// TxtCiudad control.
+        /// DdlPais control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtCiudad;
+        protected global::System.Web.UI.WebControls.DropDownList DdlPais;
         
         /// <summary>
-        /// RequiredFieldValidator8 control.
+        /// RequiredFieldValidator10 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator8;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator10;
         
         /// <summary>
         /// LblProvincia control.
@@ -238,13 +238,13 @@ namespace TP1 {
         protected global::System.Web.UI.WebControls.Label LblProvincia;
         
         /// <summary>
-        /// TxtProvincia control.
+        /// DdlProvincia control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtProvincia;
+        protected global::System.Web.UI.WebControls.DropDownList DdlProvincia;
         
         /// <summary>
         /// RequiredFieldValidator9 control.
@@ -256,31 +256,31 @@ namespace TP1 {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator9;
         
         /// <summary>
-        /// LblPais control.
+        /// LblCiudad control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblPais;
+        protected global::System.Web.UI.WebControls.Label LblCiudad;
         
         /// <summary>
-        /// TxtPais control.
+        /// DdlCiudad control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtPais;
+        protected global::System.Web.UI.WebControls.DropDownList DdlCiudad;
         
         /// <summary>
-        /// RequiredFieldValidator10 control.
+        /// RequiredFieldValidator8 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator10;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator8;
         
         /// <summary>
         /// LblMaterias control.
@@ -301,6 +301,15 @@ namespace TP1 {
         protected global::System.Web.UI.WebControls.TextBox TxtMaterias;
         
         /// <summary>
+        /// RangeValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator RangeValidator1;
+        
+        /// <summary>
         /// BtnEnviar control.
         /// </summary>
         /// <remarks>
@@ -308,5 +317,14 @@ namespace TP1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button BtnEnviar;
+        
+        /// <summary>
+        /// LblError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblError;
     }
 }

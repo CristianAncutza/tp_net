@@ -13,5 +13,10 @@ namespace TP1
         {
 
         }
+
+        protected void LnkAlta_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Alumno_Alta.aspx");
+        }
     }
 }
