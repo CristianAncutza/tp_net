@@ -18,5 +18,10 @@ namespace TP1
         {
             Response.Redirect("Alumno_Alta.aspx");
         }
+
+        protected void BtnBuscar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
