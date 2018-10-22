@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace TP1
 {
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class Login: System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -26,17 +26,17 @@ namespace TP1
                 sqlcon = new SqlConnection(@"Data Source=localhost ;Initial Catalog=tp1;Integrated Security=True;Pooling=False");
                 sqlcon.Open();
 
-                sqlcom = new SqlCommand("SELECT * FROM usuario WHERE usuario = '" + TextBoxUsuario.Text + "' AND password = '" + TextBoxPassword.Text + "'", sqlcon);
+                sqlcom = new SqlCommand("SELECT * FROM usuario WHERE usuario = '" + TxtUsuario.Text + "' AND password = '" + TxtPassword.Text + "'", sqlcon);
                 SqlDataReader dr = sqlcom.ExecuteReader();
 
                 if (dr.Read())
                 {
-                    Session["UsuarioLogueado"] = TextBoxUsuario.Text;
+                    Session["UsuarioLogueado"] = TxtUsuario.Text;
                     Response.Redirect("Alumno_lista.aspx");
                 }
                 else
                 {
-                    Label1.Text = "Verifique usuario y/o contraseña.";
+                    LblError.Text = "Verifique los datos ingresados.";
                 }
                 sqlcon.Close();
             }

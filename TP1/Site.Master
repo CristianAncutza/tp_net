@@ -4,11 +4,12 @@
 <html lang="en">
 <head runat="server">
     <meta charset="utf-8" />
-    <title><%: Page.Title %> - My ASP.NET Application</title>
+    <title><%: Page.Title %> - TP 1 Programación Avanzada 2                </title>
     <asp:PlaceHolder runat="server">     
           <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>  
     <webopt:BundleReference runat="server" Path="~/Content/css" /> 
+
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <meta name="viewport" content="width=device-width" />
     <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
@@ -38,7 +39,7 @@
         <div class="content-wrapper">
             <div class="float-left">
                 <p class="site-title">
-                    <a runat="server" href="~/">your logo here</a>
+                <!-- aca va el titulo -->  
                 </p>
             </div>
             <div class="float-right">
@@ -46,24 +47,21 @@
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
                             <ul>
-                                <li><a id="registerLink" runat="server" href="~/Account/Register.aspx">Register</a></li>
-                                <li><a id="loginLink" runat="server" href="~/Account/Login.aspx">Log in</a></li>
+                                <li><a id="registerLink" runat="server" href="~/Forms/Registracion.aspx">Registrarse</a></li>
+                                <li><a id="loginLink" runat="server" href="~/Forms/Login.aspx">Login</a></li>
                             </ul>
                         </AnonymousTemplate>
                         <LoggedInTemplate>
                             <p>
-                                Hello, <a runat="server" class="username" href="~/Account/Manage.aspx" title="Manage your account">
-                                    <asp:LoginName runat="server" CssClass="username" /></a>!
+                                Hola <asp:LoginName runat="server" CssClass="username" /></a>!
                                 <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" />
                             </p>
                         </LoggedInTemplate>
                     </asp:LoginView>
                 </section>
                 <nav>
-                    <ul id="menu">
-                        <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/About.aspx">About</a></li>
-                        <li><a runat="server" href="~/Contact.aspx">Contact</a></li>
+                    <ul id="menu">                        
+                        <li><a runat="server" href="~/About.aspx">#</a></li>                        
                     </ul>
                 </nav>
             </div>
@@ -78,7 +76,7 @@
     <footer>
         <div class="content-wrapper">
             <div class="float-left">
-                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
+                
             </div>
         </div>
     </footer>
