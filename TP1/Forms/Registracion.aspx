@@ -38,7 +38,7 @@
         <div class="form-group">
             <asp:Label ID="LblError" ForeColor="red" runat="server" Text=""></asp:Label>
         </div>
-        <asp:Button ID="BtnEnviar" runat="server" Text="Enviar" OnClick="BtnEnviar_Click" />
+<asp:Button ID="BtnEnviar"  class="btn btn-primary"  runat="server" Text="Registrarse" OnClick="BtnEnviar_Click" ForeColor="#333333" />
 
     </div>
        
