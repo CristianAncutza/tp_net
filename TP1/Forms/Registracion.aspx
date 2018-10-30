@@ -10,7 +10,7 @@
 
     <div class="container">
 
-        <div form-group>
+        <div "form-group">
              <div class="col-sm-7">
                 <asp:Label ID="LblUsuario" runat="server" Text="Usuario:"></asp:Label><br />
                 <asp:TextBox ID="TxtUsuario" runat="server"  Class="form-control" ></asp:TextBox>
