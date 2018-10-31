@@ -29,7 +29,7 @@ namespace TP1
                  nombre = TxtNombre.Text,
                  apellido = TxtApellido.Text,
                  dni = Int32.Parse(TxtDni.Text),
-                 fecha_nacimiento = DateTime.ParseExact(TxtFecnac.Text, "dd-mm-yyyy HH:mm", CultureInfo.InvariantCulture)
+                 fecha_nacimiento = Convert.ToDateTime(TxtFecnac.Text)
 
                  
             };
