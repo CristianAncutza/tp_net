@@ -1,10 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="TP1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="TP1Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="TP1ModelStoreContainer">
+    <EntitySet Name="alumno" EntityType="TP1Model.Store.alumno" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="usuario" EntityType="TP1Model.Store.usuario" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
   <EntityType Name="alumno">
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="nombre" Type="nvarchar" MaxLength="50" />
     <Property Name="apellido" Type="nvarchar" MaxLength="50" />
     <Property Name="dni" Type="int" Nullable="false" />
@@ -21,12 +25,8 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="usuario" Type="nvarchar" MaxLength="50" />
     <Property Name="password" Type="nvarchar" MaxLength="50" />
   </EntityType>
-  <EntityContainer Name="TP1ModelStoreContainer">
-    <EntitySet Name="alumno" EntityType="Self.alumno" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="usuario" EntityType="Self.usuario" Schema="dbo" store:Type="Tables" />
-  </EntityContainer>
 </Schema>

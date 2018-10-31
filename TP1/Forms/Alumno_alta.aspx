@@ -104,7 +104,7 @@
 
 
     </div>
-        <asp:Button ID="BtnEnviar" CssClass="btn-primary" runat="server" Text="Enviar" />
+        <asp:Button ID="BtnEnviar" CssClass="btn-primary" runat="server" Text="Enviar" OnClick="BtnEnviar_Click" />
         <a href="javascript:history.go(-1)">Cancelar</a>
     <asp:Label ID="LblError" ForeColor="red" runat="server" Text=""></asp:Label>
 </asp:Content>

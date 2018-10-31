@@ -12,13 +12,14 @@ namespace TP1
 {
     public partial class Login: System.Web.UI.Page
     {
-        TP1Entities usuarioLogin = new TP1Entities();
+        TP1Entities ctx = new TP1Entities();
         usuario usu = new usuario();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
+
 
         protected void Button1_Click(object sender, EventArgs e)
         {
@@ -47,27 +48,7 @@ namespace TP1
 
 
                 }
-                /*
-
-            SqlConnection sqlcon;
-            SqlCommand sqlcom;
-
-            sqlcon = new SqlConnection(@"Data Source=localhost ;Initial Catalog=tp1;Integrated Security=True;Pooling=False");
-            sqlcon.Open();
-
-            sqlcom = new SqlCommand("SELECT * FROM usuario WHERE usuario = '" + TxtUsuario.Text + "' AND password = '" + TxtPassword.Text + "'", sqlcon);
-            SqlDataReader dr = sqlcom.ExecuteReader();
-
-            if (dr.Read())
-            {
-                Session["UsuarioLogueado"] = TxtUsuario.Text;
-                Response.Redirect("Alumno_lista.aspx");
-            }
-            else
-            {
-                LblError.Text = "Verifique los datos ingresados.";
-            }
-            sqlcon.Close();*/
+                
             }
         }
 
@@ -75,14 +56,14 @@ namespace TP1
 
             try
             {
-                string usua = TxtUsuario.Text;
-                string pass = TxtPassword.Text;
+                string nombre = TxtUsuario.Text;
+                string password = TxtPassword.Text;
 
-                var user = (from u in usuarioLogin.usuario where u.password == pass && u.usuario1 == usua select u).FirstOrDefault();
+                var usuarioLogueado = (from u in ctx.usuario where u.password == password && u.usuario1 == nombre select u).FirstOrDefault();
 
-                if (user != null)
+                if (usuarioLogueado != null)
                 {
-                    usu = user;
+                    nombre = usuarioLogueado.usuario1;
 
                     return true;
                 }
