@@ -10,7 +10,7 @@
         </div>
     <div class="form-group">
         <asp:Label ID="LblDni" runat="server" Text="DNI: "></asp:Label>
-        <asp:TextBox ID="TxtDni" runat="server"></asp:TextBox>
+        <asp:TextBox ID="TxtDni" runat="server" Type="number"></asp:TextBox>
 
         <asp:Label ID="LblApellido" runat="server" Text="Apellido"></asp:Label>
         <asp:TextBox ID="TxtApellido" runat="server"></asp:TextBox>

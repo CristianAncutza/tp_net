@@ -36,10 +36,18 @@ namespace TP1
         protected void BtnBuscar_Click(object sender, EventArgs e)
         {
             var dni = 0;
+            var alumnos = from a in ctx.alumno select a; ;
+
             if (!string.IsNullOrEmpty(TxtDni.Text))
-                dni = Convert.ToInt32(TxtDni.Text);            
-                
-            var alumnos =  from a in ctx.alumno where ( dni == a.dni || TxtApellido.Text == a.apellido) select a;
+            {
+                dni = Convert.ToInt32(TxtDni.Text);
+                alumnos = from a in ctx.alumno where (dni == a.dni || TxtApellido.Text == a.apellido) select a;
+            }
+            else if (string.IsNullOrEmpty(TxtDni.Text) && !string.IsNullOrEmpty(TxtApellido.Text))
+            {
+                alumnos = from a in ctx.alumno where (TxtApellido.Text == a.apellido) select a;
+            }
+                        
             List<alumno> ListaAlumnos = alumnos.ToList();
             gvAlumnos.DataSource = ListaAlumnos;
             gvAlumnos.DataBind();
