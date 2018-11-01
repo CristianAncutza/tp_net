@@ -35,7 +35,14 @@ namespace TP1
 
         protected void BtnBuscar_Click(object sender, EventArgs e)
         {
-
+            var dni = 0;
+            if (!string.IsNullOrEmpty(TxtDni.Text))
+                dni = Convert.ToInt32(TxtDni.Text);            
+                
+            var alumnos =  from a in ctx.alumno where ( dni == a.dni || TxtApellido.Text == a.apellido) select a;
+            List<alumno> ListaAlumnos = alumnos.ToList();
+            gvAlumnos.DataSource = ListaAlumnos;
+            gvAlumnos.DataBind();
         }
 
         protected void gvAlumnos_edit(object sender, GridViewEditEventArgs e)
@@ -46,7 +53,8 @@ namespace TP1
         }
         protected void GridView1_RowUpdating(object sender, System.Web.UI.WebControls.GridViewUpdateEventArgs e)
         {
-                  
+    
+
             TextBox nombre = gvAlumnos.Rows[e.RowIndex].FindControl("txtNombre") as TextBox;
             TextBox apellido = gvAlumnos.Rows[e.RowIndex].FindControl("txtApellido") as TextBox;
 
@@ -60,14 +68,9 @@ namespace TP1
             gvAlumnos.EditIndex = -1;
             BindGridView();
 
-          
+        }     
 
-        }
-        protected void GridView1_RowCancelingEdit(object sender, System.Web.UI.WebControls.GridViewCancelEditEventArgs e)
-        {           
-            gvAlumnos.EditIndex = -1;
-            BindGridView();
-        } 
+
 
         protected void gvAlumnos_RowDataBound(object sender, GridViewRowEventArgs e)
         {
