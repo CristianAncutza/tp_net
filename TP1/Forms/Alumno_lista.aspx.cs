@@ -14,13 +14,17 @@ namespace TP1
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            BindGridView();
+            if (!IsPostBack)
+            {
+                BindGridView();            
+            }
+            
             
         }
 
         protected void BindGridView() {
-            var alumnos = from a in ctx.alumno select a;
             
+            var alumnos = from a in ctx.alumno select a;            
             List<alumno> ListaAlumnos = alumnos.ToList();
 
             gvAlumnos.DataSource = ListaAlumnos;
@@ -61,15 +65,24 @@ namespace TP1
         }
         protected void GridView1_RowUpdating(object sender, System.Web.UI.WebControls.GridViewUpdateEventArgs e)
         {
-    
 
-            TextBox nombre = gvAlumnos.Rows[e.RowIndex].FindControl("txtNombre") as TextBox;
-            TextBox apellido = gvAlumnos.Rows[e.RowIndex].FindControl("txtApellido") as TextBox;
+            GridViewRow row = gvAlumnos.Rows[e.RowIndex];
+            int id = Convert.ToInt32(gvAlumnos.DataKeys[e.RowIndex].Values[0]);
+            string nombre = (row.FindControl("TxtNombre") as TextBox).Text;
+            string apellido = (row.FindControl("TxtApellido") as TextBox).Text;
+            string dni = (row.FindControl("TxtDni") as TextBox).Text;
+            string sexo = (row.FindControl("DdlSexo") as TextBox).Text;
+            string fecha_nacimeinto = (row.FindControl("TxtFecnac") as TextBox).Text;
+            string telefono = (row.FindControl("TxtTelefono") as TextBox).Text;
+            string direccion = (row.FindControl("TxtDireccion") as TextBox).Text;
+            string ciudad = (row.FindControl("DdlCiudad") as TextBox).Text;
+            string provincia = (row.FindControl("DdlProvincia") as TextBox).Text;
+            string pais = (row.FindControl("DdlPais") as TextBox).Text;
+            string materias_aprobadas = (row.FindControl("TxtMaterias") as TextBox).Text;
 
-            int alumnoID = Convert.ToInt32(gvAlumnos.DataKeys[e.RowIndex].Value);
-            alumno alu = ctx.alumno.First(x => x.id == alumnoID);
-            alu.nombre = nombre.Text;
-            alu.apellido = apellido.Text;
+            alumno alu = (from a in ctx.alumno
+                          where a.dni == id
+                          select a).FirstOrDefault();
 
             ctx.SaveChanges();
 
@@ -79,26 +92,30 @@ namespace TP1
         }     
 
 
-
-        protected void gvAlumnos_RowDataBound(object sender, GridViewRowEventArgs e)
-        {
-            e.Row.Cells[0].Visible = false;
-        }
-
         protected void gvAlumnos_delete(object sender, GridViewDeleteEventArgs e)
         {
 
-           int alumnoID = Convert.ToInt32(gvAlumnos.DataKeys[e.RowIndex].Value);
+            int id = (int)gvAlumnos.DataKeys[e.RowIndex].Values["id"];
            
-           alumno obj = ctx.alumno.First(x => x.id == alumnoID);
-           ctx.alumno.Remove(obj);
+           alumno alu = (from a in ctx.alumno where a.id == id select a).FirstOrDefault();
+           ctx.alumno.Remove(alu);       
            ctx.SaveChanges();
-           BindGridView();
-                
-            
+           
+            BindGridView();                            
         }
 
+        protected void gvAlumnos_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "Select")
+            {
 
+                int index = Convert.ToInt32(e.CommandArgument);
+                int id = Convert.ToInt32(gvAlumnos.DataKeys[index].Value);
+
+            }
+        }
+
+         
 
     }
 }
