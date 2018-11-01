@@ -19,8 +19,14 @@
     </div>
 
     <div class="form-group">
-        <asp:GridView ID="gvAlumnos" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
+        <asp:GridView ID="gvAlumnos" runat="server"  CellPadding="4" ForeColor="#333333" GridLines="None" OnRowEditing="gvAlumnos_edit" OnRowDeleting="gvAlumnos_delete">
             <AlternatingRowStyle BackColor="White" />
+
+            <Columns>
+                <asp:ButtonField CommandName="Edit" Text="Editar" />
+                <asp:ButtonField CommandName="Delete" Text="Borrar" />
+            </Columns>
+
             <EditRowStyle BackColor="#2461BF" />
             <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
             <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -31,6 +37,8 @@
             <SortedAscendingHeaderStyle BackColor="#6D95E1" />
             <SortedDescendingCellStyle BackColor="#E9EBEF" />
             <SortedDescendingHeaderStyle BackColor="#4870BE" />
+
+
         </asp:GridView>  
     </div>
 </asp:Content>
