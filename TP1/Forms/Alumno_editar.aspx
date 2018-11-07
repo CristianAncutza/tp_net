@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="FeaturedContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
-     <div><h3>ACTUALIZACION DE DATOS DE ALUMNO <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label></h3></div><br />
+     <div><h3>ACTUALIZACION DE DATOS DE  <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label></h3></div><br />
 
     <div class="row">
 

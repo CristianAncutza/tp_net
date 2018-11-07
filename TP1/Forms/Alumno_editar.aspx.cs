@@ -15,27 +15,60 @@ namespace TP1
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["id"] != null)
-                Label3.Text = Session["id"].ToString();
+            if (!IsPostBack) { 
+                var id = 0;
+                if (Session["id"] != null)
+                   id = Convert.ToInt32(Session["id"].ToString());
+
+                alumno alu = (from a in ctx.alumno where a.id == id select a).FirstOrDefault();
+
+                Label3.Text = alu.apellido + ", " + alu.nombre;
+
+                TxtNombre.Text =  alu.nombre; 
+                TxtApellido.Text = alu.apellido;
+                TxtDni.Text =  Convert.ToString(alu.dni);
+                DdlSexo.SelectedValue = alu.sexo;
+                TxtFecnac.Text = Convert.ToString(alu.fecha_nacimiento);
+                TxtTelefono.Text = alu.telefono;
+                TxtDireccion.Text = alu.direccion;
+                DdlPais.SelectedValue = alu.pais;
+                DdlProvincia.SelectedValue = alu.provincia;
+                DdlCiudad.SelectedValue = alu.ciudad;
+                TxtMaterias.Text = Convert.ToString(alu.materias_aprobadas);
+            }
+
         }
 
         protected void BtnEnviar_Click(object sender, EventArgs e)
         {
-     
 
-          // bool result = ActualizarAlumno(alu); 
-           
+            var id = 0;
+            if (Session["id"] != null)
+                id = Convert.ToInt32(Session["id"].ToString());
+                     
+          bool result = ActualizarAlumno(id);
+
+          if (result)
+              Response.Redirect("Alumno_lista.aspx");
+                 
         }  
        
-        public bool ActualizarAlumno(alumno alu)
+        public bool ActualizarAlumno(int id)
         {  
-           bool result = false;  
+           bool result = false;
 
-               alumno _alu = ctx.alumno.Where(x => x.id == alu.id).Select(x => x).FirstOrDefault();
+           alumno _alu = (from a in ctx.alumno where a.id == id select a).First();   
                _alu.nombre = TxtNombre.Text;
                _alu.apellido = TxtApellido.Text;
-               _alu.ciudad = DdlCiudad.SelectedValue; 
+               _alu.dni = Convert.ToInt32(TxtDni.Text);
                _alu.sexo = DdlSexo.SelectedValue;
+               _alu.fecha_nacimiento = Convert.ToDateTime(TxtFecnac.Text);
+               _alu.telefono = TxtTelefono.Text;
+               _alu.direccion = TxtDireccion.Text;
+               _alu.pais = DdlPais.SelectedValue;
+               _alu.provincia = DdlProvincia.SelectedValue;
+               _alu.ciudad = DdlCiudad.SelectedValue;
+               _alu.materias_aprobadas = Convert.ToInt32(TxtMaterias.Text);
                ctx.SaveChanges(); 
                result = true;  
              
