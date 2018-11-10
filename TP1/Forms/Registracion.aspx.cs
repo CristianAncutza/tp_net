@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+using TP1.Model;
 namespace TP1
 {
     public partial class Registracion : System.Web.UI.Page
@@ -17,38 +17,27 @@ namespace TP1
 
         protected void BtnEnviar_Click(object sender, EventArgs e)
         {
+            TP1Entities ctx = new TP1Entities();
             if (Page.IsValid)
-            {                
-                SqlConnection sqlcon;
-                SqlCommand sqlcom;
-                bool exists = false;
-
-                sqlcon = new SqlConnection(@"Data Source=localhost;Initial Catalog=tp1;Integrated Security=True;Pooling=False");
-                sqlcon.Open();
-
-                using (SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM usuario WHERE usuario = '" + TxtUsuario.Text + "'", sqlcon))
+            {
+                try
                 {
-                    cmd.Parameters.AddWithValue("@usuario", TxtUsuario.Text);
-                    exists = (int)cmd.ExecuteScalar() > 0;
-                }
+                    usuario usu = new usuario()
+                    {
+                        usuario1 = TxtUsuario.Text,
+                        password = TxtPassword.Text
 
-                // if exists, show a message error
-                if (exists)
+                    };
+
+                    ctx.usuario.Add(usu);
+                    ctx.SaveChanges();
+
+                    Response.Redirect("Login.aspx");
+                }
+                catch (Exception ex)
                 {
-                    LblError.Text = "El nombre de usuario ingresado ya existe";                    
+                    LblError.Text = Convert.ToString(ex);
                 }
-                else
-                {
-                    sqlcom = new SqlCommand("INSERT INTO usuario (usuario, password) VALUES (@usuario, @password) ", sqlcon);
-
-                    sqlcom.Parameters.AddWithValue("@usuario", TxtUsuario.Text);
-                    sqlcom.Parameters.AddWithValue("@password", TxtPassword.Text);                    
-                    sqlcom.ExecuteNonQuery();
-
-                    Response.Redirect("Alumno_lista.aspx");                    
-                }
-
-                sqlcon.Close();
             }
         }
     }

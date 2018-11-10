@@ -36,16 +36,11 @@ namespace TP1
                 {
                     LblError.Visible = false;
 
-
-
-
                     FormsAuthentication.SetAuthCookie(usu.id.ToString(), false);
-                    Session["Usuario"] = usu;
-
+         
 
                     Response.Redirect("~/Forms/Alumno_lista.aspx", false);
                     Context.ApplicationInstance.CompleteRequest();
-
 
                 }
                 
@@ -64,6 +59,8 @@ namespace TP1
                 if (usuarioLogueado != null)
                 {
                     nombre = usuarioLogueado.usuario1;
+
+                    Session["nombre"] = nombre;
 
                     return true;
                 }

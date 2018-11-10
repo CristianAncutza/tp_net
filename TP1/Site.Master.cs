@@ -48,6 +48,7 @@ namespace TP1
 
         protected void master_Page_PreLoad(object sender, EventArgs e)
         {
+            
             if (!IsPostBack)
             {
                 // Set Anti-XSRF token
@@ -67,11 +68,16 @@ namespace TP1
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!Page.IsPostBack)
+
+            LoginName loginName =HeadLoginView.FindControl("HeadLoginName") as LoginName;
+
+            if (loginName != null && Session != null)
             {
-                
-                    
+                loginName.FormatString = Session["nombre"].ToString();
             }
+
+            
+            
         }
     }
 }

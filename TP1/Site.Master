@@ -49,9 +49,7 @@
             </div>
             <div class="float-right">
                 <section id="login">
-                    
-   
-                    <asp:LoginView runat="server" ViewStateMode="Disabled">
+                            <asp:LoginView ID="HeadLoginView" runat="server" ViewStateMode="Disabled">
    
                         <AnonymousTemplate>
                             <button type="button" class="btn btn-outline-primary" onclick="window.location='Registracion.aspx'">Registrarse</button>
@@ -59,8 +57,8 @@
                         </AnonymousTemplate>
                         <LoggedInTemplate>
                             <p>
-                                <asp:LoginName runat="server" CssClass="username" /></a>
-                                <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/Forms/Login.aspx" />
+                                <asp:LoginName runat="server" CssClass="username" id="HeadLoginName" /></a>
+                                <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log out" LogoutPageUrl="~/Forms/Login.aspx" />
                             </p>
                         </LoggedInTemplate>
                     </asp:LoginView>
