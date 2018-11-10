@@ -86,6 +86,7 @@
             <asp:Label ID="LblCiudad" runat="server" Text="Ciudad: "></asp:Label>
             <asp:DropDownList CssClass="form-control"  ID="DdlCiudad" runat="server">
                 <asp:ListItem Selected="True" Value="">Elija un valor</asp:ListItem>
+                <asp:ListItem Value="Capital Federal">Capital Federal</asp:ListItem>
                 <asp:ListItem value="Moron">Moron</asp:ListItem>
                 <asp:ListItem Value="Castelar">Castelar</asp:ListItem>
                 <asp:ListItem Value="Ituzaingo">Ituzaingo</asp:ListItem>
@@ -99,7 +100,7 @@
         <div class="col col-4">
             <asp:Label ID="LblMaterias" for="TxtMaterias" runat="server" Text="Materias aprobadas: "></asp:Label>
             <asp:TextBox ID="TxtMaterias" CssClass="form-control"  runat="server" Type="number"></asp:TextBox>
-            <asp:RangeValidator ID="RangeValidator1" runat="server" ForeColor="red" ControlToValidate="TxtMaterias" MinimumValue="1" MaximumValue="1000" ErrorMessage="* Ingrese un valor entre 1 y 1000"></asp:RangeValidator>
+            <asp:RangeValidator ID="RangeValidator1" runat="server" ForeColor="red" ControlToValidate="TxtMaterias" MinimumValue="1" MaximumValue="500" ErrorMessage="* Ingrese un valor entre 1 y 500"></asp:RangeValidator>
         </div>
 
 
