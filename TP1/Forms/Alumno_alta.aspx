@@ -100,7 +100,8 @@
         <div class="col col-4">
             <asp:Label ID="LblMaterias" for="TxtMaterias" runat="server" Text="Materias aprobadas: "></asp:Label>
             <asp:TextBox ID="TxtMaterias" CssClass="form-control"  runat="server" Type="number"></asp:TextBox>
-            <asp:RangeValidator ID="RangeValidator1" runat="server" ForeColor="red" ControlToValidate="TxtMaterias" MinimumValue="1" MaximumValue="500" ErrorMessage="* Ingrese un valor entre 1 y 500"></asp:RangeValidator>
+             <asp:RequiredFieldValidator ID="RequiredFieldValidator11" ForeColor="red" ControlToValidate="TxtMaterias" runat="server" ErrorMessage="* Ingresar número de materias"></asp:RequiredFieldValidator>
+            <asp:RangeValidator ID="RangeValidator1" runat="server" ForeColor="red" ControlToValidate="TxtMaterias" MinimumValue="0" MaximumValue="500" ErrorMessage="* Ingrese un valor entre 0 y 500"></asp:RangeValidator>
         </div>
 
 
