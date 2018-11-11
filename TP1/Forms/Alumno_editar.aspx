@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="FeaturedContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
-     <div><h3>ACTUALIZACION DE DATOS DE  <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label></h3></div><br />
+     <div><h3>Actualización de datos de:  <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label></h3></div><br />
 
     <div class="row">
 
@@ -103,7 +103,7 @@
 
 
     </div>
-        <asp:Button ID="BtnEnviar" CssClass="btn-primary" runat="server" Text="Enviar" OnClick="BtnEnviar_Click" />
+        <asp:Button ID="BtnEnviar" CssClass="btn btn-primary" runat="server" Text="Enviar" OnClick="BtnEnviar_Click" />
         <a href="javascript:history.go(-1)">Cancelar</a>
     <asp:Label ID="LblError" ForeColor="red" runat="server" Text=""></asp:Label>
 

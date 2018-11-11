@@ -27,7 +27,7 @@
         <div class="form-group">
             <asp:Label ID="LblError" ForeColor="red" runat="server" Text=""></asp:Label>
         </div>
-<asp:Button class="btn btn-primary" ID="BtnEnviar" runat="server" Text="Ingresar" OnClick="Button1_Click" Font-Italic="False" ForeColor="#333333" />
+<asp:Button class="btn btn-primary" ID="BtnEnviar" runat="server" Text="Ingresar" OnClick="Button1_Click" Font-Italic="False" />
 
     </div>
 

@@ -5,7 +5,7 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
 
-    <div><h3>ALTA DE ALUMNO</h3></div><br />
+    <div><h3>Alta de Alumno</h3></div><br />
 
     <div class="row">
 
@@ -106,7 +106,7 @@
 
 
     </div>
-        <asp:Button ID="BtnEnviar" CssClass="btn-primary" runat="server" Text="Enviar" OnClick="BtnEnviar_Click" />
+        <asp:Button ID="BtnEnviar" class="btn btn-primary" runat="server" Text="Enviar" OnClick="BtnEnviar_Click" />
         <a href="javascript:history.go(-1)">Cancelar</a>
     <asp:Label ID="LblError" ForeColor="red" runat="server" Text=""></asp:Label>
 </asp:Content>

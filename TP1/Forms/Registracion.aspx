@@ -12,7 +12,7 @@
 
         <div "form-group">
              <div class="col-sm-7">
-                <asp:Label ID="LblUsuario" runat="server" Text="Usuario:"></asp:Label><br />
+                <asp:Label ID="LblUsuario" runat="server" Text="Usuario:"></asp:Label>
                 <asp:TextBox ID="TxtUsuario" runat="server"  Class="form-control" ></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ForeColor="red"  ControlToValidate="TxtUsuario" runat="server" ErrorMessage="* Ingrese el usuario"></asp:RequiredFieldValidator>    
              </div>
@@ -20,7 +20,7 @@
         
         <div class="form-group">
             <div class="col-sm-7">
-                <asp:Label ID="LblPassword" runat="server" Text="Contraseña: "></asp:Label> <br />   
+                <asp:Label ID="LblPassword" runat="server" Text="Contraseña: "></asp:Label>
                 <asp:TextBox ID="TxtPassword" runat="server" type="password" Class="form-control"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ForeColor="red"  ControlToValidate="TxtPassword" runat="server" ErrorMessage="* Ingrese la contraseña"></asp:RequiredFieldValidator>
             </div>
@@ -28,7 +28,7 @@
 
         <div class="form-group">
             <div class="col-sm-7">
-                <asp:Label ID="LblRepass" runat="server" Text="Reingreso de contraseña: "></asp:Label><br />
+                <asp:Label ID="LblRepass" runat="server" Text="Reingreso de contraseña: "></asp:Label>
                 <asp:TextBox ID="TxtRepass" runat="server" type="password"  Class="form-control"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" ForeColor="red"  ControlToValidate="TxtRepass" runat="server" ErrorMessage="* Re ingrese la Contraseña"></asp:RequiredFieldValidator>
                 <asp:CompareValidator ID="CompareValidator1" ForeColor="red"  ControlToValidate="TxtRepass" ControlToCompare="TxtPassword" runat="server" ErrorMessage="* Las contraseñas no coinciden"></asp:CompareValidator>
@@ -38,7 +38,7 @@
         <div class="form-group">
             <asp:Label ID="LblError" ForeColor="red" runat="server" Text=""></asp:Label>
         </div>
-<asp:Button ID="BtnEnviar"  class="btn btn-primary"  runat="server" Text="Registrarse" OnClick="BtnEnviar_Click" ForeColor="#333333" />
+<asp:Button ID="BtnEnviar"  class="btn btn-primary"  runat="server" Text="Registrarse" OnClick="BtnEnviar_Click" />
 
     </div>
        

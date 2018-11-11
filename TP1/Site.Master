@@ -58,7 +58,7 @@
                         <LoggedInTemplate>
                             <p>
                                 <asp:LoginName runat="server" CssClass="username" id="HeadLoginName" /></a>
-                                <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log out" LogoutPageUrl="~/Forms/Login.aspx" />
+                                <asp:LoginStatus runat="server" class="btn btn-outline-primary" LogoutAction="Redirect" LogoutText="Log out" LogoutPageUrl="~/Forms/Login.aspx" />
                             </p>
                         </LoggedInTemplate>
                     </asp:LoginView>
