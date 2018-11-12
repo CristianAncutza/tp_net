@@ -15,7 +15,11 @@ namespace TP1
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (IsPostBack) {
+                DateTime fecha;
+                if (!DateTime.TryParse(TxtFecnac.Text, out fecha))
+                   LblErrorFecNac.Text = "* Formato de fecha invalido";
+            }
         }
 
         protected void BtnCancelar_Click(object sender, EventArgs e)
@@ -31,8 +35,8 @@ namespace TP1
                 {
                     nombre = TxtNombre.Text,
                     apellido = TxtApellido.Text,
-                    dni = Int32.Parse(TxtDni.Text),
-                    fecha_nacimiento = Convert.ToDateTime(TxtFecnac.Text),
+                    dni = Int32.Parse(TxtDni.Text),                                        
+                    fecha_nacimiento = Convert.ToDateTime(TxtFecnac.Text),                    
                     sexo = DdlSexo.SelectedValue,
                     telefono = TxtTelefono.Text,
                     direccion = TxtDireccion.Text,
@@ -40,7 +44,6 @@ namespace TP1
                     provincia = DdlProvincia.SelectedValue,
                     pais = DdlPais.SelectedValue,
                     materias_aprobadas = Int32.Parse(TxtMaterias.Text)
-
                 };
                 
                 ctx.alumno.Add(alu);
@@ -49,7 +52,7 @@ namespace TP1
                 Response.Redirect("Alumno_lista.aspx");
             }
             catch (Exception ex) {
-                LblError.Text = Convert.ToString(ex);            
+                LblError.Text = "No se pudo cargar el alumno, verifique los datos ingresados.";            
             }
 
         }

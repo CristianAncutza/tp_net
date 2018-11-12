@@ -73,7 +73,7 @@ namespace TP1
 
             if (loginName != null && Session != null)
             {
-               loginName.FormatString = Session["nombre"].ToString();
+              // loginName.FormatString = Session["nombre"].ToString();
             }
 
             
