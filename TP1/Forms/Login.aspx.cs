@@ -51,7 +51,7 @@ namespace TP1
 
             try
             {
-                string nombre = TxtUsuario.Text;
+                string nombre = WUC_Login.Usuario;
                 string password = TxtPassword.Text;
 
                 var usuarioLogueado = (from u in ctx.usuario where u.password == password && u.usuario1 == nombre select u).FirstOrDefault();

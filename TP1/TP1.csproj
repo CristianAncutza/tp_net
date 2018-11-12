@@ -228,6 +228,7 @@
     <Content Include="Scripts\js\bootstrap.js.map" />
     <Content Include="Scripts\js\bootstrap.min.js.map" />
     <Content Include="Forms\Alumno_editar.aspx" />
+    <Content Include="WUC_Login.ascx" />
     <EntityDeploy Include="Model\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
@@ -363,6 +364,13 @@
     </Compile>
     <Compile Include="Forms\Alumno_editar.aspx.designer.cs">
       <DependentUpon>Alumno_editar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WUC_Login.ascx.cs">
+      <DependentUpon>WUC_Login.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WUC_Login.ascx.designer.cs">
+      <DependentUpon>WUC_Login.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

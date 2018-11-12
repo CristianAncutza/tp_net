@@ -24,7 +24,7 @@ namespace TP1
                 {
                     usuario usu = new usuario()
                     {
-                        usuario1 = TxtUsuario.Text,
+                        usuario1 = WUC_Login.Usuario,
                         password = TxtPassword.Text
 
                     };

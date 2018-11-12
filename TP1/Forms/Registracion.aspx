@@ -1,4 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Registracion.aspx.cs" Inherits="TP1.Registracion" %>
+
+<%@ Register Src="~/WUC_Login.ascx" TagPrefix="uc1" TagName="WUC_Login" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     
 </asp:Content>
@@ -10,13 +13,7 @@
 
     <div class="container">
 
-        <div "form-group">
-             <div class="col-sm-7">
-                <asp:Label ID="LblUsuario" runat="server" Text="Usuario:"></asp:Label>
-                <asp:TextBox ID="TxtUsuario" runat="server"  Class="form-control" ></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ForeColor="red"  ControlToValidate="TxtUsuario" runat="server" ErrorMessage="* Ingrese el usuario"></asp:RequiredFieldValidator>    
-             </div>
-        </div>
+        <uc1:WUC_Login runat="server" ID="WUC_Login" />
         
         <div class="form-group">
             <div class="col-sm-7">
