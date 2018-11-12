@@ -193,6 +193,8 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-ui.js" />
     <Content Include="Styles\css\bootstrap-grid.css" />
     <Content Include="Styles\css\bootstrap-grid.min.css" />
     <Content Include="Styles\css\bootstrap-reboot.css" />
@@ -228,6 +230,7 @@
     <Content Include="Scripts\js\bootstrap.js.map" />
     <Content Include="Scripts\js\bootstrap.min.js.map" />
     <Content Include="Forms\Alumno_editar.aspx" />
+    <Content Include="Styles\css\jquery-ui.css" />
     <Content Include="WUC_Login.ascx" />
     <EntityDeploy Include="Model\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -284,6 +287,7 @@
     <Compile Include="About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Classes\AlumnoClass.cs" />
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

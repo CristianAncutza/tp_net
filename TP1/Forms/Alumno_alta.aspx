@@ -39,7 +39,7 @@
     
         <div class="col col-4">
             <asp:Label ID="LblFechanac" runat="server" Text="Fecha de nacimiento: "></asp:Label>
-            <asp:TextBox ID="TxtFecnac"  CssClass="form-control"  runat="server"  TextMode="Date"></asp:TextBox>
+            <asp:TextBox ID="TxtFecnac"  CssClass="form-control datepicker"  runat="server"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator5" ForeColor="red" ControlToValidate="TxtFecnac" runat="server" ErrorMessage="* Ingrese la fec. de nacimiento"></asp:RequiredFieldValidator>
         </div>
  

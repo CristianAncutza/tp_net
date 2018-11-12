@@ -11,10 +11,20 @@
     <webopt:BundleReference runat="server" Path="~/Content/css" /> 
     
     <link rel="stylesheet" href="Styles/css/bootstrap.min.css" />
-    <script src="Scripts/jquery-1.7.1.min.js"></script>    
-    <script src="Scripts/js/bootstrap.min.js"></script>
-    
+    <script src="/Scripts/jquery-3.3.1.min.js"></script>    
+    <script src="/Scripts/js/bootstrap.min.js"></script>
+    <script src="/Scripts/jquery-ui.js"></script>
+    <script type="text/javascript">
+         $(document).ready(function () {
+             $(".datepicker").datepicker({
+                 minDate: 0,
+                 dateFormat: 'dd/mm/yy',
+             });
+         });
+    </script>
 
+    
+    <link rel="stylesheet" href="/Styles/css/jquery-ui.css">
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <meta name="viewport" content="width=device-width" />
     <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
