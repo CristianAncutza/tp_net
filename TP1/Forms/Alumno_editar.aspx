@@ -10,20 +10,23 @@
 
         <div class="col col-4">
             <asp:Label ID="LblNombre" runat="server" Text="Nombre:"></asp:Label>
-            <asp:TextBox ID="TxtNombre" CssClass="form-control" runat="server"></asp:TextBox>
+            <asp:TextBox ID="TxtNombre" CssClass="form-control" runat="server" MaxLength="30" ></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ForeColor="red" ControlToValidate="TxtNombre" runat="server" ErrorMessage="* Ingrese el nombre"></asp:RequiredFieldValidator>
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" ForeColor="red" ControlToValidate="TxtNombre" runat="server" ErrorMessage="Debe ingresar letras unicamente." ValidationExpression="^[a-zA-Z]+$"></asp:RegularExpressionValidator>
         </div>
 
         <div class="col col-4">
             <asp:Label ID="LblApellido" runat="server" Text="Apellido:"></asp:Label>
-            <asp:TextBox ID="TxtApellido" CssClass="form-control"  runat="server"></asp:TextBox>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ForeColor="red" ControlToValidate="TxtApellido" runat="server" ErrorMessage="* Ingrese el apellido"></asp:RequiredFieldValidator>
+            <asp:TextBox ID="TxtApellido" CssClass="form-control"  runat="server" MaxLength="30"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ForeColor="red" ControlToValidate="TxtApellido" MaxLength="30" runat="server" ErrorMessage="* Ingrese el apellido"></asp:RequiredFieldValidator>
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator2" ForeColor="red" ControlToValidate="TxtApellido" runat="server" ErrorMessage="Debe ingresar letras unicamente." ValidationExpression="^[a-zA-Z]+$"></asp:RegularExpressionValidator>
         </div> 
         
         <div class="col col-4">  
             <asp:Label ID="LblDni" runat="server" Text="DNI:"></asp:Label>
-            <asp:TextBox type="number" ID="TxtDni" CssClass="form-control"  runat="server"></asp:TextBox>
+            <asp:TextBox type="number" ID="TxtDni" CssClass="form-control" runat="server"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator3" ForeColor="red" ControlToValidate="TxtDni" runat="server" ErrorMessage="* Ingrese el DNI"></asp:RequiredFieldValidator>
+            <asp:RangeValidator ID="RangeValidator2" runat="server" ForeColor="red" ControlToValidate="TxtDni" MinimumValue="1" MaximumValue="999999999" ErrorMessage="* Ingrese un valor entre 1 y 999999999"></asp:RangeValidator>
         </div>
 
         <div class="col col-4">
@@ -40,17 +43,19 @@
             <asp:Label ID="LblFechanac" runat="server" Text="Fecha de nacimiento: "></asp:Label>
             <asp:TextBox ID="TxtFecnac"  CssClass="form-control datepicker"  runat="server"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator5" ForeColor="red" ControlToValidate="TxtFecnac" runat="server" ErrorMessage="* Ingrese la fec. de nacimiento"></asp:RequiredFieldValidator>
+
         </div>
  
         <div class="col col-4">
             <asp:Label ID="LblTelefono" runat="server" Text="Telefono: "></asp:Label>
             <asp:TextBox type="number" ID="TxtTelefono" CssClass="form-control"  runat="server"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator6" ForeColor="red" ControlToValidate="TxtTelefono" runat="server" ErrorMessage="* Ingrese el Telefono"></asp:RequiredFieldValidator>
+            <asp:RangeValidator ID="RangeValidator3" runat="server" ForeColor="red" ControlToValidate="TxtTelefono" MinimumValue="1" MaximumValue="999999999" ErrorMessage="* Ingrese un valor entre 1 y 999999999"></asp:RangeValidator>
         </div>
     
         <div class="col col-4">
             <asp:Label ID="LblDireccion" runat="server" Text="Dirección: "></asp:Label>
-            <asp:TextBox ID="TxtDireccion" CssClass="form-control"  runat="server"></asp:TextBox>
+            <asp:TextBox ID="TxtDireccion" CssClass="form-control"  runat="server" MaxLength="30"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator7" ForeColor="red" ControlToValidate="TxtDireccion" runat="server" ErrorMessage="* Ingrese la dirección"></asp:RequiredFieldValidator>
         </div>
 
@@ -85,6 +90,7 @@
             <asp:Label ID="LblCiudad" runat="server" Text="Ciudad: "></asp:Label>
             <asp:DropDownList CssClass="form-control"  ID="DdlCiudad" runat="server">
                 <asp:ListItem Selected="True" Value="">Elija un valor</asp:ListItem>
+                <asp:ListItem Value="Capital Federal">Capital Federal</asp:ListItem>
                 <asp:ListItem value="Moron">Moron</asp:ListItem>
                 <asp:ListItem Value="Castelar">Castelar</asp:ListItem>
                 <asp:ListItem Value="Ituzaingo">Ituzaingo</asp:ListItem>
@@ -98,7 +104,8 @@
         <div class="col col-4">
             <asp:Label ID="LblMaterias" for="TxtMaterias" runat="server" Text="Materias aprobadas: "></asp:Label>
             <asp:TextBox ID="TxtMaterias" CssClass="form-control"  runat="server" Type="number"></asp:TextBox>
-            <asp:RangeValidator ID="RangeValidator1" runat="server" ForeColor="red" ControlToValidate="TxtMaterias" MinimumValue="1" MaximumValue="1000" ErrorMessage="* Ingrese un valor entre 1 y 1000"></asp:RangeValidator>
+             <asp:RequiredFieldValidator ID="RequiredFieldValidator11" ForeColor="red" ControlToValidate="TxtMaterias" runat="server" ErrorMessage="* Ingresar número de materias"></asp:RequiredFieldValidator>
+            <asp:RangeValidator ID="RangeValidator1" runat="server" ForeColor="red" ControlToValidate="TxtMaterias" MinimumValue="0" MaximumValue="500" ErrorMessage="* Ingrese un valor entre 0 y 500"></asp:RangeValidator>
         </div>
 
 

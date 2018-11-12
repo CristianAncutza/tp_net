@@ -16,7 +16,7 @@
         <div class="form-group">
             <div class="col-sm-7">
                 <asp:Label ID="LblPassword" runat="server" Text="Contraseña: "></asp:Label>             
-                <asp:TextBox ID="TxtPassword" runat="server" type="password" Class="form-control"></asp:TextBox>
+                <asp:TextBox ID="TxtPassword" runat="server" type="password" Class="form-control" MaxLength="50"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ForeColor="red"  ControlToValidate="TxtPassword" runat="server" ErrorMessage="* Ingrese la contraseña"></asp:RequiredFieldValidator>
             </div>
         </div>

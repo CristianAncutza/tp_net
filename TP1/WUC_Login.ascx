@@ -3,7 +3,7 @@
        <div class="form-group">
             <div class="col-sm-7">
                 <asp:Label ID="LblUsuario" runat="server" Text="Usuario: "></asp:Label>
-                <asp:TextBox ID="TxtUsuario" runat="server" Class="form-control" ></asp:TextBox>
+                <asp:TextBox ID="TxtUsuario" runat="server" Class="form-control" MaxLength="50"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ForeColor="red"  ControlToValidate="TxtUsuario" runat="server" ErrorMessage="* Ingrese el Usuario"></asp:RequiredFieldValidator>
             </div>
         </div>

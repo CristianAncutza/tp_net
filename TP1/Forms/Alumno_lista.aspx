@@ -11,9 +11,11 @@
 
         <asp:Label ID="LblDni" runat="server" Text="DNI  "></asp:Label>
         <asp:TextBox ID="TxtDni" class="form-control  col-sm-2" runat="server" Type="number"></asp:TextBox>
+        <asp:RangeValidator ID="RangeValidator1" runat="server" ForeColor="red" ControlToValidate="TxtDni" MinimumValue="1" MaximumValue="999999999" ErrorMessage=""></asp:RangeValidator>
+        
             &nbsp; &nbsp;
         <asp:Label ID="LblApellido" runat="server" Text="Apellido  "></asp:Label>
-        <asp:TextBox ID="TxtApellido" class="form-control col-sm-2" runat="server"></asp:TextBox>
+        <asp:TextBox ID="TxtApellido" class="form-control col-sm-2" runat="server" MaxLength="50"></asp:TextBox>
             &nbsp; &nbsp;
         <asp:Button ID="BtnBuscar" class="btn btn-outline btn-primary " runat="server" Text="Buscar" OnClick="BtnBuscar_Click" />
             <asp:LinkButton ID="LnkAlta" class="btn btn-outline btn-primary" runat="server" OnClick="LnkAlta_Click">Dar de Alta Alumno</asp:LinkButton>
