@@ -13,6 +13,7 @@
     <div class="container">
 
         <uc1:WUC_Login runat="server" ID="WUC_Login" />
+
         <div class="form-group">
             <div class="col-sm-7">
                 <asp:Label ID="LblPassword" runat="server" Text="Contraseña: "></asp:Label>             

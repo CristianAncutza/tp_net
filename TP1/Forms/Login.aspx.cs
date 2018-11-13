@@ -66,6 +66,7 @@ namespace TP1
                 }
                 else
                 {
+                    LblError.Text = "Error! Usuario y/o contraseña invalida.";
                     return false;
                 }
             }
